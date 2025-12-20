@@ -89,7 +89,7 @@ export function TransactionProvider({ children }: TransationsProviderProps) {
           },
         });
         setTransactions(response.data);
-      } catch (error) {
+      } catch {
         // Fallback para localStorage se API falhar
         const storedTransactions = loadFromStorage();
         let filtered = storedTransactions;
@@ -129,7 +129,7 @@ export function TransactionProvider({ children }: TransationsProviderProps) {
       setAllTransactions(response.data);
       // Sincroniza com localStorage
       saveToStorage(response.data);
-    } catch (error) {
+    } catch {
       // Fallback para localStorage se API falhar
       const storedTransactions = loadFromStorage();
       setAllTransactions(storedTransactions);
@@ -167,7 +167,7 @@ export function TransactionProvider({ children }: TransationsProviderProps) {
           saveToStorage(updated);
           return updated;
         });
-      } catch (error) {
+      } catch {
         // Fallback para localStorage se API falhar
         console.log('API indisponível, salvando apenas no localStorage');
 

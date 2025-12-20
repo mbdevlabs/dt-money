@@ -30,7 +30,7 @@ function SearchFormComponent() {
   });
 
   async function handleSearchTransactions(data: SearchFormInputs) {
-    await fetchTransactions(data.query);
+    await fetchTransactions({ query: data.query });
   }
 
   return (

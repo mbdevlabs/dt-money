@@ -43,7 +43,7 @@ export const NewTransactionButton = styled.button`
     width: 8.2rem;
     height: 2.2rem;
     padding: 0;
-    color: ${(props) => props.theme.while};
+    color: ${(props) => props.theme.white};
     font-size: 0.88rem;
     font-weight: 500;
   }
