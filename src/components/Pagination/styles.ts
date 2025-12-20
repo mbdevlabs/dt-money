@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const PaginationContainer = styled.div`
   width: 100%;
@@ -9,10 +9,10 @@ export const PaginationContainer = styled.div`
   justify-content: center;
 
   gap: 1rem;
-`
+`;
 
 interface ButtonActiveStyles {
-  active?: boolean
+  active?: boolean;
 }
 
 export const IconStyles = styled.button<ButtonActiveStyles>`
@@ -35,7 +35,7 @@ export const IconStyles = styled.button<ButtonActiveStyles>`
     color: ${(props) =>
       props.active ? props.theme['green-500'] : props.theme['gray-600']};
   }
-`
+`;
 
 export const PageButtonStyles = styled.button<ButtonActiveStyles>`
   background-color: transparent;
@@ -61,4 +61,4 @@ export const PageButtonStyles = styled.button<ButtonActiveStyles>`
   &:hover {
     filter: brightness(0.9);
   }
-`
+`;

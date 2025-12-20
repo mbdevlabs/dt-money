@@ -1,8 +1,8 @@
-export const dateFormatter = new Intl.DateTimeFormat('pt-BR')
+export const dateFormatter = new Intl.DateTimeFormat('pt-BR');
 
 export const priceFormatter = new Intl.NumberFormat('pt-BR', {
   style: 'currency',
   currency: 'BRL',
-})
+});
 
-export const screenDisplay = window.screen.width < 391
+export const screenDisplay = window.screen.width < 391;

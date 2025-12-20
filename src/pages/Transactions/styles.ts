@@ -1,10 +1,10 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const PageContainer = styled.main`
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-`
+`;
 
 export const TransactionsContainer = styled.main`
   width: 100%;
@@ -35,7 +35,7 @@ export const TransactionsContainer = styled.main`
       }
     }
   }
-`
+`;
 
 export const TransactionsTable = styled.table`
   width: 100%;
@@ -108,9 +108,9 @@ export const TransactionsTable = styled.table`
       gap: 5px;
     }
   }
-`
+`;
 interface PriceHighlightProps {
-  variant: 'income' | 'outcome'
+  variant: 'income' | 'outcome';
 }
 
 export const PriceHighlight = styled.span<PriceHighlightProps>`
@@ -123,4 +123,4 @@ export const PriceHighlight = styled.span<PriceHighlightProps>`
     font-size: 1.25rem;
     font-weight: 600;
   }
-`
+`;

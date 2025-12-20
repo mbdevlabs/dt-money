@@ -1,26 +1,26 @@
-import { Header } from '../../components/Header'
-import { Summary } from '../../components/Summary'
-import { SearchForm } from './components/SearchForm'
+import { Header } from '../../components/Header';
+import { Summary } from '../../components/Summary';
+import { SearchForm } from './components/SearchForm';
 import {
   PageContainer,
   PriceHighlight,
   TransactionsContainer,
   TransactionsTable,
-} from './styles'
-import { TransactionsContext } from '../../contexts/TransactionsContext'
+} from './styles';
+import { TransactionsContext } from '../../contexts/TransactionsContext';
 import {
   dateFormatter,
   priceFormatter,
   screenDisplay,
-} from '../../utils/formatter'
-import { CalendarBlank, TagSimple } from 'phosphor-react'
-import { useContextSelector } from 'use-context-selector'
-import { Pagination } from '../../components/Pagination'
+} from '../../utils/formatter';
+import { CalendarBlank, TagSimple } from 'phosphor-react';
+import { useContextSelector } from 'use-context-selector';
+import { Pagination } from '../../components/Pagination';
 
 export function Transactions() {
   const transactions = useContextSelector(TransactionsContext, (context) => {
-    return context.transactions
-  })
+    return context.transactions;
+  });
 
   return (
     <PageContainer>
@@ -60,12 +60,12 @@ export function Transactions() {
                     </td>
                   </div>
                 </tr>
-              )
+              );
             })}
           </tbody>
         </TransactionsTable>
       </TransactionsContainer>
       <Pagination />
     </PageContainer>
-  )
+  );
 }

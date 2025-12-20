@@ -1,39 +1,39 @@
-import { CaretLeft, CaretRight } from 'phosphor-react'
-import { IconStyles, PageButtonStyles, PaginationContainer } from './styles'
-import { useContextSelector } from 'use-context-selector'
-import { TransactionsContext } from '../../contexts/TransactionsContext'
-import { useEffect, useMemo, useState } from 'react'
+import { CaretLeft, CaretRight } from 'phosphor-react';
+import { IconStyles, PageButtonStyles, PaginationContainer } from './styles';
+import { useContextSelector } from 'use-context-selector';
+import { TransactionsContext } from '../../contexts/TransactionsContext';
+import { useEffect, useMemo, useState } from 'react';
 
 export function Pagination() {
   const { allTransactions, fetchTransactions, limitPerPage } =
-    useContextSelector(TransactionsContext, (context) => context)
+    useContextSelector(TransactionsContext, (context) => context);
 
-  const [currentPage, setCurrentPage] = useState(1)
+  const [currentPage, setCurrentPage] = useState(1);
 
-  const totalPages = Math.ceil(allTransactions.length / limitPerPage)
+  const totalPages = Math.ceil(allTransactions.length / limitPerPage);
 
   const visiblePages = useMemo(() => {
-    const maxVisiblePages = 2
+    const maxVisiblePages = 2;
 
-    const startPage = Math.max(1, currentPage - maxVisiblePages)
-    const endPage = Math.min(totalPages, currentPage + maxVisiblePages)
+    const startPage = Math.max(1, currentPage - maxVisiblePages);
+    const endPage = Math.min(totalPages, currentPage + maxVisiblePages);
 
     return Array.from(
       { length: endPage - startPage + 1 },
       (_, index) => startPage + index,
-    )
-  }, [currentPage, totalPages])
+    );
+  }, [currentPage, totalPages]);
 
   async function handleTransactionPages() {
-    await fetchTransactions({ page: currentPage })
+    await fetchTransactions({ page: currentPage });
   }
 
   useEffect(() => {
-    handleTransactionPages()
-  }, [currentPage])
+    handleTransactionPages();
+  }, [currentPage]);
 
-  const canGoBack = currentPage > 1
-  const canGoForward = currentPage < totalPages
+  const canGoBack = currentPage > 1;
+  const canGoForward = currentPage < totalPages;
 
   return (
     <PaginationContainer>
@@ -65,5 +65,5 @@ export function Pagination() {
         <CaretRight />
       </IconStyles>
     </PaginationContainer>
-  )
+  );
 }
